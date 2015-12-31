@@ -44,6 +44,14 @@ impl<'p> Plot<'p> {
         let _ = self.plt.call(self.py, "title", (title,), None).unwrap();
     }
 
+    pub fn xlabel(&self, label: &str) {
+        let _ = self.plt.call(self.py, "xlabel", (label,), None).unwrap();
+    }
+
+    pub fn ylabel(&self, label: &str) {
+        let _ = self.plt.call(self.py, "ylabel", (label,), None).unwrap();
+    }
+
     pub fn grid(&self, grid: bool) {
         let _ = self.plt.call(self.py, "grid", (grid,), None).unwrap();
     }

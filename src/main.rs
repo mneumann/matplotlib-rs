@@ -25,6 +25,10 @@ fn main() {
         // set plot title
         plot.title(&format!("Iteration: {}", i));
 
+        // set x/y axis labels
+        plot.xlabel("x");
+        plot.ylabel("y");
+
         // show grid
         plot.grid(true);
 
