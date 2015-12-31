@@ -1,0 +1,13 @@
+[package]
+name = "matplotlib"
+version = "0.0.1"
+authors = ["Michael Neumann <mneumann@ntecs.de>"]
+license = "MIT"
+repository = "https://github.com/mneumann/matplotlib-rs"
+description = "Uses rust-cpython to provide a convenient interface to Python's matplotlib"
+keywords = ["plot", "math"]
+
+[dependencies.cpython]
+git = "https://github.com/dgrunwald/rust-cpython.git"
+default-features = false
+features = ["python27-sys"]
