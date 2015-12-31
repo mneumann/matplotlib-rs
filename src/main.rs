@@ -22,6 +22,9 @@ fn main() {
         // clear figure
         plot.clf();
 
+        // set plot title
+        plot.title(&format!("Iteration: {}", i));
+
         // draw the actual data
         plot.scatter(&x, &y);
 

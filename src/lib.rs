@@ -40,6 +40,10 @@ impl<'p> Plot<'p> {
         let _ = self.plt.call(self.py, "scatter", (x, y), None).unwrap();
     }
 
+    pub fn title(&self, title: &str) {
+        let _ = self.plt.call(self.py, "title", (title,), None).unwrap();
+    }
+
     pub fn draw(&self) {
         let _ = self.plt.call(self.py, "draw", PyTuple::empty(self.py), None).unwrap();
     }
