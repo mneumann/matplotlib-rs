@@ -1,8 +1,33 @@
 extern crate matplotlib;
 
-fn main() {
-    let x = [123.0, 100.0];
-    let y = [100.0, 200.0];
+use matplotlib::{Env, Plot};
 
-    matplotlib::scatterplot(&x, &y);
+fn main() {
+    let env = Env::new();
+    let plot = Plot::new(&env);
+
+    // set interactive mode on
+    plot.interactive();
+
+    // display window
+    plot.show();
+
+    let mut x = Vec::new();
+    let mut y = Vec::new();
+
+    for i in 1..100 {
+        x.push(i as f32);
+        y.push(100.0 - i as f32);
+
+        // clear figure
+        plot.clf();
+
+        // draw the actual data
+        plot.scatter(&x, &y);
+
+        // update drawing
+        plot.draw();
+
+        std::thread::sleep(std::time::Duration::from_millis(50));
+    }
 }
