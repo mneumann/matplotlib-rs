@@ -44,6 +44,10 @@ impl<'p> Plot<'p> {
         let _ = self.plt.call(self.py, "title", (title,), None).unwrap();
     }
 
+    pub fn grid(&self, grid: bool) {
+        let _ = self.plt.call(self.py, "grid", (grid,), None).unwrap();
+    }
+
     pub fn draw(&self) {
         let _ = self.plt.call(self.py, "draw", PyTuple::empty(self.py), None).unwrap();
     }

@@ -25,6 +25,9 @@ fn main() {
         // set plot title
         plot.title(&format!("Iteration: {}", i));
 
+        // show grid
+        plot.grid(true);
+
         // draw the actual data
         plot.scatter(&x, &y);
 
